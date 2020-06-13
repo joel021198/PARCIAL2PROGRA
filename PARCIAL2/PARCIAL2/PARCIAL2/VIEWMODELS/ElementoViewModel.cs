@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PARCIAL2.MODELS;
+using PARCIAL2.SERVICES;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +8,9 @@ namespace PARCIAL2.VIEWMODELS
 {
  public   class ElementoViewModel:BaseViewModel
     {
-        //apiservic
+        #region Services
+        private ApiService apiService;
+        #endregion
 
         #region Attributes
         private string id;
@@ -39,16 +43,27 @@ namespace PARCIAL2.VIEWMODELS
         #region Constructor
         public ElementoViewModel ()
         {
+            this.apiService = new ApiService();
             this.LoadELemento();
 
         }
 
-        private void LoadELemento()
-        {
-            throw new NotImplementedException();
-        }
+
         #endregion
 
+
+        #region Methods
+        private async void LoadELemento()
+        {
+            var elemento = await this.apiService.Get<Elemento>(
+                "https://jsonplaceholder.typicode.com/",
+                "photos/ID",
+                "ID");
+            this.Id = elemento[0].Id;
+            this.Tittle = elemento[0].Tittle;
+            this.Url = elemento[0].Url;
+        }
+        #endregion
 
     }
 }

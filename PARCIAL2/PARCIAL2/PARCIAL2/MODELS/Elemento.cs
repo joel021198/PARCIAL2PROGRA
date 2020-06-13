@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
+using System.Globalization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
 namespace PARCIAL2.MODELS
 {
-    using System;
-    using System.Collections.Generic;
-
-    using System.Globalization;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
     public partial class Elemento
     {
         [JsonProperty("albumId")]
