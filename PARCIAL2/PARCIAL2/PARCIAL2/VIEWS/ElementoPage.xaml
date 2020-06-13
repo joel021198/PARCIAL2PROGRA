@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Login"
+             x:Class="PARCIAL2.VIEWS.ElementoPage">
+    <ContentPage.Content>
+        <StackLayout  BindingContext="{Binding Elemento}">
+            <Label Text="JOEL EDWIN SALAZAR ESTRADA"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding Id}"
+                    VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Llamar API Rest"
+                    VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   CornerRadius="15"
+                  BackgroundColor="blue"
+                    BorderColor="black"
+                    BorderWidth="15"/>   
+            <Label Text="{Binding Tittle}"
+                   VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   BackgroundColor="Yellow"/>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
